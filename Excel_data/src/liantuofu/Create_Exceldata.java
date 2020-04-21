@@ -12,7 +12,7 @@ public class Create_Exceldata {
         public static void writeExcel() {
             double random = Math.random();
             int num = new Double(Math.random() * 100).intValue();
-            System.out.println(num+"-------------------------");
+            System.out.println(num+"---------------11----------");
             String numbera=String.valueOf(num);
             String filename="D:/TestFile"+numbera+".xls";
             String[] titleA = {"大类", "中类","小类","子类","商品编码","商品条码","商品名称","单位","配送价","进货价","批发价","采购因子","商品图片","商品描述"};
