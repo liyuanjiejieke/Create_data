@@ -11,12 +11,16 @@ public class Create_Exceldata {
         }
         public static void writeExcel() {
             double random = Math.random();
+            //获取随机数
             int num = new Double(Math.random() * 100).intValue();
             System.out.println(num+"---------------11----------");
+            //将随机数转换为String
             String numbera=String.valueOf(num);
+            //Excel文件名
             String filename="D:/TestFile"+numbera+".xls";
+            //需要生成的Excel都有哪哪些列
             String[] titleA = {"大类", "中类","小类","子类","商品编码","商品条码","商品名称","单位","配送价","进货价","批发价","采购因子","商品图片","商品描述"};
-            //创建Excel文件
+            //创建Excel文件  如果存在  则删除
             File fileA = new File(filename);
             if (fileA.exists()){
                 fileA.delete();
@@ -29,14 +33,13 @@ public class Create_Exceldata {
                 WritableSheet sheetA=workbook.createSheet("sheet1",0);
                 Label labelA=null;
 
-
+                //for循环添加需要生成的列
                 for (int i=0;i<titleA.length;i++){
                     labelA=new Label(i,0,titleA[i]);
                     sheetA.addCell(labelA);
                 }
                 //获取数据源
                 for (int i=1;i<=200;i++){
-
 
                     labelA = new Label(0,i,"水果大类" + i);
                     sheetA.addCell(labelA);
@@ -59,7 +62,6 @@ public class Create_Exceldata {
                     labelA = new Label(9,i,""+i+1);
 
                     sheetA.addCell(labelA);
-
 
                     labelA = new Label(10,i,""+i);
                     sheetA.addCell(labelA);
